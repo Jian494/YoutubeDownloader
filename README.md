@@ -12,4 +12,4 @@ pip install ffmpeg
 Python 3.8.6
 ```
 
-![GitHub Logo](/images/pyYTDL.png
+![](/pyYTDL/blob/master/pyYTDL.png)
