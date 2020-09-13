@@ -16,7 +16,7 @@ while True:
     print("\n"+"Output Format"+"\n"+"==================="+"\n"+"1) mp4"+"\n"+"2) mp3"+"\n"+"\n")
     a = input("Choice --> ")
     if a == "1":
-        url1 = input("Choice --> ")
+        url1 = input("Url --> ")
         if "&list=" not in url1:    
             print("Start Progressing...")
             video = YouTube(url1).streams.filter(progressive=False, file_extension='mp4').order_by('resolution').desc().first().download(filename="video")
@@ -49,7 +49,7 @@ while True:
                 os.system("rm -r -f nvideo.mp4 naudio.mp4")
                 print("DONE")
     if a == "2":
-        url1 = input("Choice --> ")
+        url1 = input("Url --> ")
         if "&list=" not in url1:    
             print("Start Progressing...")
             music = YouTube(url1).streams.filter(audio_codec="mp4a.40.2").desc().first().download(filename="naudio")            
