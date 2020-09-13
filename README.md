@@ -17,7 +17,7 @@ Python 3.8.6
 ## Output Files
 ```
 Resolution(Single) = 720p
-Resolution(Playlist) = 360p
+Resolution(Playlist) = 720p
 .mp4
 .mp3
 ```
