@@ -5,7 +5,8 @@ Only been tested in Linux
 
 ## Pip to Install:
 ```
-run requirement.py
+pytube
+ffmpeg
 ```
 ## Python version
 ```
