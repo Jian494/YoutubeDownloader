@@ -1,11 +1,11 @@
 # pyYTDL
 pyYTDL is a short form of "Python YouTube Downloader." 
 There are many online youtube downlodaer...Why not trying to make one for yourself? We are just the beginner in coding.
+Only been tested in Linux
 
 ## Pip to Install:
 ```
-pip install pytube
-pip install ffmpeg
+run requirement.py
 ```
 ## Python version
 ```
@@ -24,5 +24,6 @@ Resolution(Playlist) = 720p
 ## Installation
 ```
 git clone https://github.com/Jian494/pyYTDL
-python3 ytdownloader.py
+python3 requirement.py (Install PIP)
+python3 ytdownloader.py (Run Program)
 ```
