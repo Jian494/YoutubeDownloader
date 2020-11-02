@@ -6,6 +6,7 @@ import time
 def install(package):    
     os.system("pip install "+ str(package))
     os.system("pip3 install "+ str(package))
+    os.system("python -m pip install git+https://github.com/nficano/pytube")
     
     print("\n" + "Installed " + package.upper() + "\n")
 
