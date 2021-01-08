@@ -13,6 +13,8 @@ def install(package):
 os.system("clear" or "cls")
 print("Checking Requirements")
 time.sleep(2)
+install("pytube3")
+install("pytube")
 install("git+https://gitlab.com/obuilds/public/pytube@ob-v1 --upgrade")
 install("ffmpeg")
 print("Requirements Installed Completed")
