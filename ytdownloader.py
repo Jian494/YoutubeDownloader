@@ -9,6 +9,7 @@ import ffmpeg
 import re
 
 def mp4():    
+    os.system("mkdir Video > /dev/null 2>&1")
     videoname = YouTube(url).title
     video = YouTube(url).streams.filter(progressive=False, file_extension='mp4').order_by('resolution').desc().first().download(filename="video")        
     music = YouTube(url).streams.filter(audio_codec="mp4a.40.2").desc().first().download(filename="audio")                    
@@ -16,10 +17,10 @@ def mp4():
     music2 = ffmpeg.input("audio.mp4")    
     if "/" in videoname:
         cname2 = videoname.replace("/"," ")
-        merged = ffmpeg.concat(video1,music2, v=1 , a =1).output(cname2+".mp4")
+        merged = ffmpeg.concat(video1,music2, v=1 , a =1).output("Video/"+cname2+".mp4")
         merged.run(cmd='ffmpeg', capture_stdout=False, capture_stderr=False, input=None, quiet=True, overwrite_output=True)
     else:
-        merged = ffmpeg.concat(video1,music2, v=1 , a =1).output(videoname+".mp4")
+        merged = ffmpeg.concat(video1,music2, v=1 , a =1).output("Video/"+videoname+".mp4")
         merged.run(cmd='ffmpeg', capture_stdout=False, capture_stderr=False, input=None, quiet=True, overwrite_output=True)   
     os.system("rm -r -f video.mp4 audio.mp4")        
 
@@ -48,13 +49,13 @@ def mbar(count):
     for i in range(int(size/500)):
         b.update(500)
         time.sleep(count)
-    time.sleep(1)
     print(YouTube(url).title+" DONE" +"\n")
 
 def mp3():
+    os.system("mkdir Music > /dev/null 2>&1")
     music = YouTube(url).streams.filter(audio_codec="mp4a.40.2").desc().first().download(filename="naudio")                            
     rname= YouTube(url).title.replace("/","")                                              
-    os.rename("naudio.mp4",rname+".mp3")      
+    os.rename("naudio.mp4","Music/"+rname+".mp3")          
 
 if __name__=='__main__':
     print("__   _______ ____                      _                 _           ")
